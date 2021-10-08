@@ -4,10 +4,11 @@ use std::io;
 
 pub fn read_float() -> f64 {
     let mut num = String::new();
+    println!("Enter a number: ");
     io::stdin()
         .read_line(&mut num)
         .expect("Could not read line...");
-    let num: f64 = num.trim().parse().expect("Could not parse int!");
+    let num: f64 = num.trim().parse().expect("Could not parse float!");
     num
 }
 
