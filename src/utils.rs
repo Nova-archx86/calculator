@@ -1,10 +1,7 @@
 use std::io;
 
-// Collection of utility functions used in main.rs!
-
 pub fn read_float() -> f64 {
     let mut num = String::new();
-    println!("Enter a number: ");
     io::stdin()
         .read_line(&mut num)
         .expect("Could not read line...");

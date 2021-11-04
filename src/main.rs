@@ -1,35 +1,7 @@
+mod calculator;
 mod utils;
 
-struct Calculator {
-    num1: f64,
-    num2: f64,
-}
-
-impl Calculator {
-    // sets the default value for num1 and num2 to 0
-    fn new() -> Self {
-        Calculator {
-            num1: 0.0,
-            num2: 0.0,
-        }
-    }
-
-    fn add(&self) -> f64 {
-        self.num1 + self.num2
-    }
-
-    fn sub(&self) -> f64 {
-        self.num1 - self.num2
-    }
-
-    fn mult(&self) -> f64 {
-        self.num1 * self.num2
-    }
-
-    fn div(&self) -> f64 {
-        self.num1 / self.num2
-    }
-}
+use calculator::Calculator;
 
 fn main() {
     println!("What would you like to do? \n");
@@ -39,9 +11,9 @@ fn main() {
     match choice {
         1 => {
             let mut cal = Calculator::new();
-            println!("Enter the first number: ");
+            println!("Enter a number: ");
             cal.num1 = utils::read_float();
-            println!("Enter the second number: ");
+            println!("Enter a number: ");
             cal.num2 = utils::read_float();
             let res = cal.add();
             println!("Result: {}", res);
@@ -49,9 +21,9 @@ fn main() {
 
         2 => {
             let mut cal = Calculator::new();
-            println!("Enter the first number: ");
+            println!("Enter a number: ");
             cal.num1 = utils::read_float();
-            println!("Enter the second number: ");
+            println!("Enter a number: ");
             cal.num2 = utils::read_float();
             let res = cal.sub();
             println!("Result: {}", res);
@@ -59,9 +31,9 @@ fn main() {
 
         3 => {
             let mut cal = Calculator::new();
-            println!("Enter the first number: ");
+            println!("Enter a number: ");
             cal.num1 = utils::read_float();
-            println!("Enter the second number: ");
+            println!("Enter a number: ");
             cal.num2 = utils::read_float();
             let res = cal.mult();
             println!("Result: {}", res);
@@ -69,13 +41,14 @@ fn main() {
 
         4 => {
             let mut cal = Calculator::new();
-            println!("Enter the first number: ");
+            println!("Enter a number: ");
             cal.num1 = utils::read_float();
-            println!("Enter the second number: ");
+            println!("Enter a number: ");
             cal.num2 = utils::read_float();
             let res = cal.div();
             println!("Result: {}", res);
         }
+
         _ => {
             println!("Not a valid operation");
         }
